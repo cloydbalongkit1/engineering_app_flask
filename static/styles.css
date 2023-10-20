@@ -1,0 +1,42 @@
+/* colors */
+/* #AEE1E1 */
+/* #D3E0DC */
+/* #ECE2E1 */
+/* #FCD1D1 */
+
+body {
+    background-color: #e7fbfb;
+}
+
+.body-div {
+    height: auto;
+}
+
+.border-round {
+    border-radius: 20px;
+}
+
+.nav-styles {
+    display: flex;
+    justify-content: end;
+}
+
+.table-label {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .nav-styles {
+        display: flex;
+        justify-content: start;
+    }
+  }
+
+  

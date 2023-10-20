@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container mt-2">
+        <h1 class="h1 mt-5 text-center">SOLAR POWER - OFFGRID</h1>
+        <hr>
+    </div>
+    <div class="container mt-2">
+        <div class="row m-1">
+            <form method="POST" class="mt-5 border border-2 border-success p-4 border-round" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                {{ form.csrf_token }}
+                <h4 class="table-label">Design Criteria Forms</h4>
+                <hr>
+                <small>Note: If you believe that you only require a one or two appliance load, please enter the number zero (0) in the remaining appliance form.</small>
+                <div class="row justify-content-center p-2">
+                    <div class="col-md-3 border border-3 border-round p-4 m-4">
+                        <h4>Appliance Load 1</h4>
+                        {{ form.hours_load1.label(class="form-control-label mb-2") }}
+                        {% if form.hours_load1.errors %}
+                            {{ form.hours_load1(class="form-control form-control-lg mb-2 is-invalid") }}
+                        {% else %}
+                            {{ form.hours_load1(class="form-control form-control-lg mb-2") }}
+                        {% endif %}
+    
+                        {{ form.watts_load1.label(class="form-control-label mb-2") }}
+                        {% if form.watts_load1.errors %}
+                            {{ form.watts_load1(class="form-control form-control-lg mb-2 is-invalid") }}
+                        {% else %}
+                            {{ form.watts_load1(class="form-control form-control-lg mb-2") }}
+                        {% endif %}
+    
+                        {{ form.quantity_load1.label(class="form-control-label mb-2") }}
+                        {% if form.quantity_load1.errors %}
+                            {{ form.quantity_load1(class="form-control form-control-lg mb-2 is-invalid") }}
+                        {% else %}
+                            {{ form.quantity_load1(class="form-control form-control-lg mb-2") }}
+                        {% endif %}
+                    </div>
+    
+                    <div class="col-md-3 border border-3 border-round p-4 m-4">
+                        <h4>Appliance Load 2</h4>
+                        {{ form.hours_load2.label(class="form-control-label mb-2") }}
+                        {% if form.hours_load2.errors %}
+                            {{ form.hours_load2(class="form-control form-control-lg mb-2 is-invalid") }}
+                        {% else %}
+                            {{ form.hours_load2(class="form-control form-control-lg mb-2") }}
+                        {% endif %}
+    
+                        {{ form.watts_load2.label(class="form-control-label mb-2") }}
+                        {% if form.watts_load2.errors %}
+                            {{ form.watts_load2(class="form-control form-control-lg mb-2 is-invalid") }}
+                        {% else %}
+                            {{ form.watts_load2(class="form-control form-control-lg mb-2") }}
+                        {% endif %}
+    
+                        {{ form.quantity_load2.label(class="form-control-label mb-2") }}
+                        {% if form.quantity_load2.errors %}
+                            {{ form.quantity_load2(class="form-control form-control-lg mb-2 is-invalid") }}
+                        {% else %}
+                            {{ form.quantity_load2(class="form-control form-control-lg mb-2") }}
+                        {% endif %}
+                    </div>
+
+                    <div class="col-md-3 border border-3 border-round p-4 m-4">
+                        <h4>Appliance Load 3</h4>
+                        {{ form.hours_load3.label(class="form-control-label mb-2") }}
+                        {% if form.hours_load3.errors %}
+                            {{ form.hours_load3(class="form-control form-control-lg mb-2 is-invalid") }}
+                        {% else %}
+                            {{ form.hours_load3(class="form-control form-control-lg mb-2") }}
+                        {% endif %}
+    
+                        {{ form.watts_load3.label(class="form-control-label mb-2") }}
+                        {% if form.watts_load3.errors %}
+                            {{ form.watts_load3(class="form-control form-control-lg mb-2 is-invalid") }}
+                        {% else %}
+                            {{ form.watts_load3(class="form-control form-control-lg mb-2") }}
+                        {% endif %}
+    
+                        {{ form.quantity_load3.label(class="form-control-label mb-2") }}
+                        {% if form.quantity_load3.errors %}
+                            {{ form.quantity_load3(class="form-control form-control-lg mb-2 is-invalid") }}
+                        {% else %}
+                            {{ form.quantity_load3(class="form-control form-control-lg mb-2") }}
+                        {% endif %}
+                    </div>
+
+                </div>
+                
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8 border border-3 border-round p-4">
+                        <fieldset class="form-group">
+                            <h4 class="mb-3">Average Load Wattage and Hours of Use in Your Home</h4>
+   
+                
+                            {{ form.autonomy.label(class="form-control-label mb-2") }}
+                            {% if form.autonomy.errors %}
+                                {{ form.autonomy(class="form-control form-control-lg mb-2 is-invalid") }}
+                            {% else %}
+                                {{ form.autonomy(class="form-control form-control-lg mb-2") }}
+                            {% endif %}
+                
+                
+                            {{ form.system_voltage.label(class="form-control-label mb-2") }}
+                            {% if form.system_voltage.errors %}
+                                {{ form.system_voltage(class="form-control form-control-lg mb-2 is-invalid") }}
+                            {% else %}
+                                {{ form.system_voltage(class="form-control form-control-lg mb-2") }}
+                            {% endif %}
+        
+        
+                            {{ form.sunhours.label(class="form-control-label mb-2") }}
+                            {% if form.sunhours.errors %}
+                                {{ form.sunhours(class="form-control form-control-lg mb-2 is-invalid") }}
+                            {% else %}
+                                {{ form.sunhours(class="form-control form-control-lg mb-2") }}
+                            {% endif %}
+                
+                
+                            {{ form.battery_type.label(class="form-control-label mb-2") }}
+                            {{ form.battery_type(class="form-control form-control-lg mb-2") }}
+                
+                        </fieldset>
+                        <div class="form-group">
+                            {{ form.submit(class="btn btn-primary mt-2") }}
+                        </div>
+                    </div>
+                </div>
+                    
+            </form>
+            
+        </div>
+
+        {% if request.method == "POST" %}
+        <div class="row">
+            <h3 class="text-center mt-5">Suggested Solar Design Follows</h3>
+            <hr>
+            <div class="mt-4 col-md-6"> 
+                <div class="container border border-2 border-info border-round mt-4 p-4">
+                    <h5 class="text-center">Total Load Energy: {{ answers['load_total_wh'] }} Wh</h5>
+                    <div class="container border border-3 border-round mt-4 p-4">
+                        <h4>Energy Storage Design</h4>
+                        <h6>Battery Capacity: {{ answers['battery_ah_needed'] }} Ah</h6>
+                        <h6>Battery Energy: {{ answers['watts_battery_maxDOD'] }} Wh</h6>
+                        <h6>Maximum Battery Discharge: {{ answers['watts_autonomy'] }} Wh</h6>
+                    </div>
+                    <div class="container border border-3 border-round mt-4 p-4">
+                        <h4>Required Solar Panel Design</h4>
+                        <h6>Min Solar Panel/s Wattage: {{ answers['min_pv_panels_needed'] }} W</h6>
+                        <h6>Max Solar Panel/s Wattage: {{ answers['max_pv_panels_needed'] }} W</h6>
+                        <div class="mt-3 border border-round p-3">
+                            <small class="text-primary">
+                                <ul>
+                                    <li>To get the number of panels follow this formula: (min/max PV Watts)/PV Panel Watts</li>
+                                    <li>Example: 1000 Watts required / 100 Watts PV Panel  = 10pcs - 100W PV Panel</li>
+                                </ul>
+                            </small>
+                            <small class="text-danger p-1">Note: Please also refer your SCC/Hybrid Inverters Specs to avoid damages!</small>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+
+            <div class="mt-4 col-md-6">
+                <div class="container border border-2 border-info border-round mt-4 p-4">
+                    <h4>DC to AC Design</h4>
+                    <h6>Min Inverter Rating: {{ answers['inverter_rating'] }} W</h6>
+                    <h6>Inverter DC Input Voltage: {{ answers['system_voltage'] }} V</h6>
+                    <h6>Inverter AC Output Voltage: 230V (L-N)</h6>
+                    <div class="mt-3 border border-round p-3">
+                        <small class="text-primary">
+                            <ul>
+                                <li>Pure Sine Wave</li>
+                                <li>Inverter AC Output will depend on it's specs sheets. Ranges from 120V - 240V AC</li>
+                            </ul>
+                        </small>
+                    </div>
+                </div>
+                <div class="container border border-2 border-info border-round mt-3 p-3 img-size">
+                    <img class="img-fluid rounded-4" src="{{ url_for('static', filename='images/off_grid.jpg') }}" alt="off grid solar">
+                </div>    
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    
+    
+{% endblock content %}
