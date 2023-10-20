@@ -40,9 +40,9 @@ def power():
         current = p_calc.amps_calc.data
         power = voltage * current
         answers = {
-            'voltage': voltage,
-            'current': current,
-            'power': power,
+            'voltage': "{:.2f}".format(voltage),
+            'current': "{:.2f}".format(current),
+            'power': "{:.2f}".format(power),
         }
         return render_template('calc_power.html', title='Ohms Law - Answer', form=form, p_calc=p_calc, answers=answers)
     
@@ -58,9 +58,9 @@ def current():
         power = p_calc.pow_calc.data
         current = power/voltage
         answers = {
-            'voltage': voltage,
-            'power': power,
-            'current': current,
+            'voltage': "{:.2f}".format(voltage),
+            'power': "{:.2f}".format(power),
+            'current': "{:.2f}".format(current),
         }
         return render_template('calc_current.html', title='Ohms Law - Answer', form=form, p_calc=p_calc, answers=answers)
     
@@ -76,9 +76,9 @@ def resistance():
         current = p_calc.amps_calc.data
         resistance = voltage/current
         answers = {
-            'voltage': voltage,
-            'resistance': resistance,
-            'current': current,
+            'voltage': "{:.2f}".format(voltage),
+            'resistance': "{:.2f}".format(resistance),
+            'current': "{:.2f}".format(current),
         }
         return render_template('calc_resistance.html', title='Ohms Law - Answer', form=form, p_calc=p_calc, answers=answers)
     
