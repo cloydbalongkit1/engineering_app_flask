@@ -44,9 +44,45 @@ def power():
             'current': current,
             'power': power,
         }
-        return render_template('calc.html', title='Ohms Law - Answer', form=form, p_calc=p_calc, answers=answers)
+        return render_template('calc_power.html', title='Ohms Law - Answer', form=form, p_calc=p_calc, answers=answers)
     
-    return render_template('calc.html', title='Ohms Law - Power', form=form, p_calc=p_calc)
+    return render_template('calc_power.html', title='Ohms Law - Power', form=form, p_calc=p_calc)
+
+
+@app.route('/current', methods=['GET', 'POST'])
+def current():
+    form= CalculationsType()
+    p_calc = PowerCalc()
+    if form.validate_on_submit():
+        voltage = p_calc.vol_calc.data
+        power = p_calc.pow_calc.data
+        current = power/voltage
+        answers = {
+            'voltage': voltage,
+            'power': power,
+            'current': current,
+        }
+        return render_template('calc_current.html', title='Ohms Law - Answer', form=form, p_calc=p_calc, answers=answers)
+    
+    return render_template('calc_current.html', title='Ohms Law - Current', form=form, p_calc=p_calc)
+
+
+@app.route('/resistance', methods=['GET', 'POST'])
+def resistance():
+    form= CalculationsType()
+    p_calc = PowerCalc()
+    if form.validate_on_submit():
+        voltage = p_calc.vol_calc.data
+        current = p_calc.amps_calc.data
+        resistance = voltage/current
+        answers = {
+            'voltage': voltage,
+            'resistance': resistance,
+            'current': current,
+        }
+        return render_template('calc_resistance.html', title='Ohms Law - Answer', form=form, p_calc=p_calc, answers=answers)
+    
+    return render_template('calc_resistance.html', title='Ohms Law - Resistance', form=form, p_calc=p_calc)
 
 
 @app.route('/solar', methods=['GET', 'POST'])

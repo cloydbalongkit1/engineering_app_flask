@@ -34,5 +34,6 @@ class PowerCalc(FlaskForm):
     vol_calc = FloatField('Input Voltage', validators=[InputRequired(), NumberRange(min=1)])
     amps_calc = FloatField('Input Current', validators=[InputRequired(), NumberRange(min=1)])
     res_calc = FloatField('Input Resistance', validators=[InputRequired(), NumberRange(min=1)])
+    pow_calc = FloatField('Input Power', validators=[InputRequired(), NumberRange(min=1)])
     submit = SubmitField('Submit')
     
