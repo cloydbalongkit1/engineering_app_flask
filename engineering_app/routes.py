@@ -1,13 +1,9 @@
 import math
-import os
-from flask_bootstrap import Bootstrap5
-from flask import Flask, render_template, request, redirect, url_for
-from form import LoadTable, CalculationsType, PowerCalc
-
-
-app = Flask(__name__)
-bootstrap = Bootstrap5(app)
-app.config['SECRET_KEY'] = os.environ.get('ENG_AP_SECRET_KEY')
+from engineering_app import app
+# bootstrap
+from flask import render_template
+# , request, redirect, url_for
+from engineering_app.form import LoadTable, CalculationsType, PowerCalc
 
 
 @app.route('/', methods=["GET", "POST"])
@@ -136,8 +132,3 @@ def solar():
         return render_template('solar.html', title='Computed', form=form, answers=answers)
     
     return render_template('solar.html', title='Compute', form=form)
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
-

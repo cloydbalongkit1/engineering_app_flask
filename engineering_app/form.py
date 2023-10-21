@@ -4,7 +4,6 @@ from wtforms.validators import DataRequired, InputRequired, NumberRange
 
 
 class LoadTable(FlaskForm):
-    
     autonomy = DecimalField('Days of Autonomy (ranges: 1-10)', validators=[InputRequired(), NumberRange(min=0)])
     system_voltage = IntegerField('System Voltage (12V, 24V, 36V, 48V, 60V ...etc)', validators=[InputRequired(), NumberRange(min=0)])
     sunhours = DecimalField('Sun Harvest (ranges: 1.0 hr/s - 10.0 hr/s)', validators=[InputRequired(), NumberRange(min=0)])

@@ -10,10 +10,9 @@
         <div class="row m-1">
             <form method="POST" class="mt-5 border border-2 border-success p-4 border-round" enctype="multipart/form-data">
                 {{ form.hidden_tag() }}
-                {{ form.csrf_token }}
                 <h4 class="table-label">Design Criteria Forms</h4>
                 <hr>
-                <small>Note: If you believe that you only require a one or two appliance load, please enter the number zero (0) in the remaining appliance form.</small>
+                <small class="text-primary">Note: If you believe that you only require a one or two appliance load, please enter the number zero (0) in the remaining appliance form.</small>
                 <div class="row justify-content-center p-2">
                     <div class="col-md-3 border border-3 border-round p-4 m-4">
                         <h4>Appliance Load 1</h4>
@@ -93,7 +92,14 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8 border border-3 border-round p-4">
                         <fieldset class="form-group">
-                            <h4 class="mb-3">Average Load Wattage and Hours of Use in Your Home</h4>
+                            <h4 class="mb-3">Other Design Considerations</h4>
+                            <small class="text-primary">Note:
+                                <ul>
+                                    <li>Days Autonomy: Days your back-up can sustain without charging.</li>
+                                    <li>System Voltages: Your preference within the standard voltage. It is often recommended that the higher the wattage or (Wh) demand, the higher the voltage should be used.</li>
+                                    <li>Sun Harvest: Please search the average sunhours in your place.</li>
+                                </ul>
+                            </small>
    
                 
                             {{ form.autonomy.label(class="form-control-label mb-2") }}
