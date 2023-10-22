@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import IntegerField, SubmitField, SelectField, DecimalField, FloatField
-from wtforms.validators import DataRequired, InputRequired, NumberRange
+from wtforms import IntegerField, SubmitField, SelectField, DecimalField, FloatField, StringField
+from wtforms.validators import DataRequired, InputRequired, NumberRange, Length
 
 
 class LoadTable(FlaskForm):
@@ -36,3 +36,24 @@ class PowerCalc(FlaskForm):
     pow_calc = FloatField('Input Power', validators=[InputRequired(), NumberRange(min=1)])
     submit = SubmitField('Submit')
     
+
+class SchedLoads(FlaskForm):
+    item1 = IntegerField('Item/s', validators=[InputRequired(), NumberRange(min=1, max=100)])
+    description1 = StringField('Description', validators=[DataRequired(), Length(min=1, max=20)])
+    unit1 = StringField('Unit', validators=[DataRequired(), Length(min=1, max=20)])
+    qty1 = IntegerField('Qty', validators=[InputRequired(), NumberRange(min=0)])
+    power1 = IntegerField('Power', validators=[InputRequired(), NumberRange(min=0)])
+
+    item2 = IntegerField('Item/s', validators=[InputRequired(), NumberRange(min=1, max=100)])
+    description2 = StringField('Description', validators=[DataRequired(), Length(min=1, max=20)])
+    unit2 = StringField('Unit', validators=[DataRequired(), Length(min=1, max=20)])
+    qty2 = IntegerField('Qty', validators=[InputRequired(), NumberRange(min=0)])
+    power2 = IntegerField('Power', validators=[InputRequired(), NumberRange(min=0)])
+
+    item3 = IntegerField('Item/s', validators=[InputRequired(), NumberRange(min=1, max=100)])
+    description3 = StringField('Description', validators=[DataRequired(), Length(min=1, max=20)])
+    unit3 = StringField('Unit', validators=[DataRequired(), Length(min=1, max=20)])
+    qty3 = IntegerField('Qty', validators=[InputRequired(), NumberRange(min=0)])
+    power3 = IntegerField('Power', validators=[InputRequired(), NumberRange(min=0)])
+
+    submit = SubmitField('Calculate')

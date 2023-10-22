@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container mt-2">
+        <h1 class="h1 mt-5 text-center">Schedule Of Loads</h1>
+        <form method="POST" class="mt-5 p-4 border border-2 border-info border-round" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <h4>Input Your Load Specs</h4>
+            <hr>
+            <div class="row justify-content-center p-2 border border-2 border-bottom-0 border-round-2 mx-1">
+                <div class="col-md-2 p-1 m-1">
+                    {{ form.item1.label(class="form-control-label mb-2") }}
+                    {% if form.item1.errors %}
+                        {{ form.item1(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.item1(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-3 p-1 m-1">
+                    {{ form.description1.label(class="form-control-label mb-2") }}
+                    {% if form.description1.errors %}
+                        {{ form.description1(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.description1(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-2 p-1 m-1">
+                    {{ form.unit1.label(class="form-control-label mb-2") }}
+                    {% if form.unit1.errors %}
+                        {{ form.unit1(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.unit1(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-2 p-1 m-1">
+                    {{ form.qty1.label(class="form-control-label mb-2") }}
+                    {% if form.qty1.errors %}
+                        {{ form.qty1(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.qty1(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-2 p-1 m-1">
+                    {{ form.power1.label(class="form-control-label mb-2") }}
+                    {% if form.power1.errors %}
+                        {{ form.power1(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.power1(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row justify-content-center p-2 border border-2 border-top-0 border-bottom-0 mx-1">
+                <div class="col-md-2 p-1 m-1">
+                    {{ form.item2.label(class="form-control-label mb-2") }}
+                    {% if form.item2.errors %}
+                        {{ form.item2(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.item2(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-3 p-1 m-1">
+                    {{ form.description2.label(class="form-control-label mb-2") }}
+                    {% if form.description2.errors %}
+                        {{ form.description2(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.description2(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-2 p-1 m-1">
+                    {{ form.unit2.label(class="form-control-label mb-2") }}
+                    {% if form.unit2.errors %}
+                        {{ form.unit2(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.unit2(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-2 p-1 m-1">
+                    {{ form.qty2.label(class="form-control-label mb-2") }}
+                    {% if form.qty2.errors %}
+                        {{ form.qty2(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.qty2(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-2 p-1 m-1">
+                    {{ form.power2.label(class="form-control-label mb-2") }}
+                    {% if form.power2.errors %}
+                        {{ form.power2(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.power2(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row justify-content-center p-2 border border-2 border-top-0 mx-1">
+                <div class="col-md-2 p-1 m-1">
+                    {{ form.item3.label(class="form-control-label mb-2") }}
+                    {% if form.item3.errors %}
+                        {{ form.item3(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.item3(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-3 p-1 m-1">
+                    {{ form.description3.label(class="form-control-label mb-2") }}
+                    {% if form.description3.errors %}
+                        {{ form.description3(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.description3(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-2 p-1 m-1">
+                    {{ form.unit3.label(class="form-control-label mb-2") }}
+                    {% if form.unit3.errors %}
+                        {{ form.unit3(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.unit3(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-2 p-1 m-1">
+                    {{ form.qty3.label(class="form-control-label mb-2") }}
+                    {% if form.qty3.errors %}
+                        {{ form.qty3(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.qty3(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-2 p-1 m-1">
+                    {{ form.power3.label(class="form-control-label mb-2") }}
+                    {% if form.power3.errors %}
+                        {{ form.power3(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.power3(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group mt-2 mx-1">
+                {{ form.submit(class="btn btn-outline-info mt-2") }}
+            </div>
+        </form>
+    </div>
+
+{% endblock content %}

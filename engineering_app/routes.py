@@ -3,7 +3,7 @@ from engineering_app import app
 # bootstrap
 from flask import render_template
 # , request, redirect, url_for
-from engineering_app.form import LoadTable, CalculationsType, PowerCalc
+from engineering_app.form import LoadTable, CalculationsType, PowerCalc, SchedLoads
 
 
 @app.route('/', methods=["GET", "POST"])
@@ -24,7 +24,7 @@ def cement():
 @app.route('/electrical_power')
 def electrical_power():
     form = CalculationsType()
-    return render_template('electrical_power.html', title='Ohms Law Calculations', form=form)
+    return render_template('electrical_power.html', title='Basic Calculations', form=form)
 
 
 @app.route('/power', methods=['GET', 'POST'])
@@ -103,7 +103,6 @@ def solar():
             'quantity_load2': form.quantity_load2.data,
             'quantity_load3': form.quantity_load3.data,
         }
-        
         load1_wh = datas['hours_load1'] * datas['quantity_load1'] * datas['watts_load1']
         load2_wh = datas['hours_load2'] * datas['quantity_load2'] * datas['watts_load2']
         load3_wh = datas['hours_load3'] * datas['quantity_load3'] * datas['watts_load3']
@@ -128,7 +127,29 @@ def solar():
             'max_pv_panels_needed': "{:.2f}".format(max_pv_panels_needed),
             'inverter_rating': inverter_rating,
         }
+        return render_template('solar.html', title='OffGrid-Computed', form=form, answers=answers)
+    return render_template('solar.html', title='OffGrid Setup Design', form=form)
 
-        return render_template('solar.html', title='Computed', form=form, answers=answers)
+
+@app.route('/schedule_of_loads')
+def sched_loads():
+    form = SchedLoads()
+    inputs = {
+        'item1': form.item1.data,
+        'item2': form.item2.data,
+        'item3': form.item3.data,
+        'description1': form.description1.data,
+        'description2': form.description2.data,
+        'description3': form.description3.data,
+        'unit1': form.unit1.data,
+        'unit2': form.unit2.data,
+        'unit3': form.unit3.data,
+        'qty1': form.qty1.data,
+        'qty2': form.qty2.data,
+        'qty3': form.qty3.data,
+        'power1': form.power1.data,
+        'power2': form.power2.data,
+        'power3': form.power3.data,
+    }
     
-    return render_template('solar.html', title='Compute', form=form)
+    return render_template('sched_loads.html', title='Schedule Of Loads', form=form)
