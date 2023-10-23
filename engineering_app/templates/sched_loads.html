@@ -26,14 +26,6 @@
                     {% endif %}
                 </div>
                 <div class="col-md-2 p-1 m-1">
-                    {{ form.unit1.label(class="form-control-label mb-2") }}
-                    {% if form.unit1.errors %}
-                        {{ form.unit1(class="form-control form-control-lg mb-2 is-invalid") }}
-                    {% else %}
-                        {{ form.unit1(class="form-control form-control-lg mb-2") }}
-                    {% endif %}
-                </div>
-                <div class="col-md-2 p-1 m-1">
                     {{ form.qty1.label(class="form-control-label mb-2") }}
                     {% if form.qty1.errors %}
                         {{ form.qty1(class="form-control form-control-lg mb-2 is-invalid") }}
@@ -41,7 +33,7 @@
                         {{ form.qty1(class="form-control form-control-lg mb-2") }}
                     {% endif %}
                 </div>
-                <div class="col-md-2 p-1 m-1">
+                <div class="col-md-3 p-1 m-1">
                     {{ form.power1.label(class="form-control-label mb-2") }}
                     {% if form.power1.errors %}
                         {{ form.power1(class="form-control form-control-lg mb-2 is-invalid") }}
@@ -68,14 +60,6 @@
                     {% endif %}
                 </div>
                 <div class="col-md-2 p-1 m-1">
-                    {{ form.unit2.label(class="form-control-label mb-2") }}
-                    {% if form.unit2.errors %}
-                        {{ form.unit2(class="form-control form-control-lg mb-2 is-invalid") }}
-                    {% else %}
-                        {{ form.unit2(class="form-control form-control-lg mb-2") }}
-                    {% endif %}
-                </div>
-                <div class="col-md-2 p-1 m-1">
                     {{ form.qty2.label(class="form-control-label mb-2") }}
                     {% if form.qty2.errors %}
                         {{ form.qty2(class="form-control form-control-lg mb-2 is-invalid") }}
@@ -83,7 +67,7 @@
                         {{ form.qty2(class="form-control form-control-lg mb-2") }}
                     {% endif %}
                 </div>
-                <div class="col-md-2 p-1 m-1">
+                <div class="col-md-3 p-1 m-1">
                     {{ form.power2.label(class="form-control-label mb-2") }}
                     {% if form.power2.errors %}
                         {{ form.power2(class="form-control form-control-lg mb-2 is-invalid") }}
@@ -110,14 +94,6 @@
                     {% endif %}
                 </div>
                 <div class="col-md-2 p-1 m-1">
-                    {{ form.unit3.label(class="form-control-label mb-2") }}
-                    {% if form.unit3.errors %}
-                        {{ form.unit3(class="form-control form-control-lg mb-2 is-invalid") }}
-                    {% else %}
-                        {{ form.unit3(class="form-control form-control-lg mb-2") }}
-                    {% endif %}
-                </div>
-                <div class="col-md-2 p-1 m-1">
                     {{ form.qty3.label(class="form-control-label mb-2") }}
                     {% if form.qty3.errors %}
                         {{ form.qty3(class="form-control form-control-lg mb-2 is-invalid") }}
@@ -125,7 +101,7 @@
                         {{ form.qty3(class="form-control form-control-lg mb-2") }}
                     {% endif %}
                 </div>
-                <div class="col-md-2 p-1 m-1">
+                <div class="col-md-3 p-1 m-1">
                     {{ form.power3.label(class="form-control-label mb-2") }}
                     {% if form.power3.errors %}
                         {{ form.power3(class="form-control form-control-lg mb-2 is-invalid") }}
@@ -134,10 +110,26 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="form-group mt-2 mx-1">
-                {{ form.submit(class="btn btn-outline-info mt-2") }}
+            <div class="row form-group mt-2 mx-1">
+                <div class="col-md-2 p-1 m-1">
+                    {{ form.voltage.label(class="form-control-label mb-2") }}
+                    {% if form.voltage.errors %}
+                        {{ form.voltage(class="form-control form-control-lg mb-2 is-invalid") }}
+                    {% else %}
+                        {{ form.voltage(class="form-control form-control-lg mb-2") }}
+                    {% endif %}
+                </div>
+                <div class="col-md-2">
+                    {{ form.submit(class="btn btn-outline-info mt-5") }}
+                </div>
             </div>
         </form>
     </div>
+
+    
+    <div class="container mt-5">
+        {% block calc %} {% endblock calc %}
+    </div>
+    
 
 {% endblock content %}
