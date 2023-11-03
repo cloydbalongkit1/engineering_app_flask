@@ -131,25 +131,30 @@ def solar():
     return render_template('solar.html', title='OffGrid Setup Design', form=form)
 
 
-@app.route('/schedule_of_loads')
+@app.route('/schedule_of_loads', methods=['GET', 'POST'])
 def sched_loads():
     form = SchedLoads()
-    inputs = {
-        'item1': form.item1.data,
-        'item2': form.item2.data,
-        'item3': form.item3.data,
-        'description1': form.description1.data,
-        'description2': form.description2.data,
-        'description3': form.description3.data,
-        'unit1': form.unit1.data,
-        'unit2': form.unit2.data,
-        'unit3': form.unit3.data,
-        'qty1': form.qty1.data,
-        'qty2': form.qty2.data,
-        'qty3': form.qty3.data,
-        'power1': form.power1.data,
-        'power2': form.power2.data,
-        'power3': form.power3.data,
-    }
+    if form.validate_on_submit():
+        inputs = {
+            'item1': form.item1.data,
+            'item2': form.item2.data,
+            'item3': form.item3.data,
+            'description1': form.description1.data,
+            'description2': form.description2.data,
+            'description3': form.description3.data,
+            'qty1': form.qty1.data,
+            'qty2': form.qty2.data,
+            'qty3': form.qty3.data,
+            'power1': form.power1.data * form.qty1.data,
+            'power2': form.power2.data * form.qty2.data,
+            'power3': form.power3.data * form.qty3.data,
+            'voltage': form.voltage.data,
+        }
+        calculated = {
+            'current1': "{:.2f}".format(inputs['power1'] / inputs['voltage']),
+            'current2': "{:.2f}".format(inputs['power2'] / inputs['voltage']),
+            'current3': "{:.2f}".format(inputs['power3'] / inputs['voltage']),
+        }
+        return render_template('sched_loads_calc.html', title='Schedule Of Loads Calculated', form=form, inputs=inputs, calculated=calculated)
     
     return render_template('sched_loads.html', title='Schedule Of Loads', form=form)
