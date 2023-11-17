@@ -128,6 +128,7 @@ def solar():
             'inverter_rating': inverter_rating,
         }
         return render_template('solar.html', title='OffGrid-Computed', form=form, answers=answers)
+    
     return render_template('solar.html', title='OffGrid Setup Design', form=form)
 
 
