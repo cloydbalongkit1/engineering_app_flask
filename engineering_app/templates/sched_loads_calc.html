@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'sched_loads.html' %}
 
 {% block calc %}
@@ -50,4 +51,58 @@
         </tbody>
   </table>
 
+=======
+{% extends 'sched_loads.html' %}
+
+{% block calc %}
+    <hr>
+    <h4 class="mb-3">Calculated Load Schedule</h4>
+    <table class="table table-dark table-hover">
+        <thead>
+        <tr class="table-active">
+            <th scope="col">Items</th>
+            <th scope="col">Description</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Power</th>
+            <th scope="col">Voltage</th>
+            <th scope="col">Current</th>
+            <th scope="col">Wire Size</th>
+            <th scope="col">Conduit</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">{{ inputs['item1'] }}</th>
+            <td>{{ inputs['description1'] }}</td>
+            <td>{{ inputs['qty1'] }}</td>
+            <td>{{ inputs['power1'] }}</td>
+            <td>{{ inputs['voltage'] }}</td>
+            <td>{{ calculated['current1'] }}</td>
+            <td>#Wire Size</td>
+            <td>#Conduit</td>
+        </tr>
+        <tr>
+            <th scope="row">{{ inputs['item2'] }}</th>
+            <td>{{ inputs['description2'] }}</td>
+            <td>{{ inputs['qty2'] }}</td>
+            <td>{{ inputs['power2'] }}</td>
+            <td>{{ inputs['voltage'] }}</td>
+            <td>{{ calculated['current2'] }}</td>
+            <td>#Wire Size</td>
+            <td>#Conduit</td>
+        </tr>
+        <tr>
+            <th scope="row">{{ inputs['item3'] }}</th>
+            <td>{{ inputs['description3'] }}</td>
+            <td>{{ inputs['qty3'] }}</td>
+            <td>{{ inputs['power3'] }}</td>
+            <td>{{ inputs['voltage'] }}</td>
+            <td>{{ calculated['current3'] }}</td>
+            <td>#Wire Size</td>
+            <td>#Conduit</td>
+        </tr>
+        </tbody>
+  </table>
+
+>>>>>>> 2bc39bf1b63b4011be7e39d1b3da6b581749b34e
 {% endblock calc %}
